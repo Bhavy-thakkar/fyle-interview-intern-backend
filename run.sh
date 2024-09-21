@@ -14,4 +14,5 @@ export FLASK_APP=core/server.py
 # flask db upgrade -d core/migrations/
 
 # Run server
-gunicorn -c gunicorn_config.py core.server:app
+# gunicorn -c gunicorn_config.py core.server:app
+waitress-serve --port=8000 core.server:app
